@@ -8,11 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Question View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DuoFlags" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="BYZ-38-t0r" customClass="QuestionViewController" customModule="DuoFlags" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="QuestionView" customModule="DuoFlags" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -32,6 +32,9 @@
                                 <rect key="frame" x="20" y="779" width="374" height="43"/>
                                 <color key="backgroundColor" name="CorrectButtonColor"/>
                                 <state key="normal" title="Verificar"/>
+                                <connections>
+                                    <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eXf-gw-PlF"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="kg7-dv-qMg">
                                 <rect key="frame" x="20" y="544.5" width="374" height="204.5"/>
@@ -40,21 +43,33 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
                                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="markAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gjW-9h-R9R"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68x-7w-vFM">
                                         <rect key="frame" x="0.0" y="54" width="374" height="43"/>
                                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="markAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Rh-DP-Bju"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBl-v0-hR9">
                                         <rect key="frame" x="0.0" y="108" width="374" height="43"/>
                                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="markAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UUs-d7-1K5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRp-P2-qBl">
                                         <rect key="frame" x="0.0" y="162" width="374" height="42.5"/>
                                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="markAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PpI-qz-4Sb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -94,6 +109,14 @@
                             <constraint firstItem="N2l-xj-uBL" firstAttribute="top" secondItem="ygR-ke-6cF" secondAttribute="bottom" constant="20" id="yal-1L-6UL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outlet property="answerAButton" destination="Za8-5T-Vf8" id="9am-h1-45i"/>
+                            <outlet property="answerBButton" destination="68x-7w-vFM" id="sDx-Tl-i55"/>
+                            <outlet property="answerCButton" destination="lBl-v0-hR9" id="prI-Gq-YOG"/>
+                            <outlet property="answerDButton" destination="qRp-P2-qBl" id="s2N-R3-iad"/>
+                            <outlet property="checkAnswerButton" destination="KYA-jc-1z2" id="VRD-Qe-DBa"/>
+                            <outlet property="questionImageView" destination="N2l-xj-uBL" id="p7Z-cV-lpw"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -108,7 +131,7 @@
             <color red="0.54400002956390381" green="0.77700001001358032" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="FontColor">
-            <color red="0.29024526480000001" green="0.2940532267" blue="0.29804000260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.28999999165534973" green="0.29399999976158142" blue="0.29800000786781311" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="ProgressBarColor">
             <color red="0.96200001239776611" green="0.78899997472763062" blue="0.26600000262260437" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
