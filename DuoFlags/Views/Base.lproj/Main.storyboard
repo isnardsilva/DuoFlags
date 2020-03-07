@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +11,107 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DuoFlags" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="De quem é essa bandeira?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygR-ke-6cF">
+                                <rect key="frame" x="20" y="116.5" width="374" height="27.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" name="FontColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="brazil-flag" translatesAutoresizingMaskIntoConstraints="NO" id="N2l-xj-uBL">
+                                <rect key="frame" x="31" y="164" width="352" height="246.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="N2l-xj-uBL" secondAttribute="height" multiplier="10:7" id="mXp-Rr-f6E"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYA-jc-1z2">
+                                <rect key="frame" x="20" y="779" width="374" height="43"/>
+                                <color key="backgroundColor" name="CorrectButtonColor"/>
+                                <state key="normal" title="Verificar"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="kg7-dv-qMg">
+                                <rect key="frame" x="20" y="544.5" width="374" height="204.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Za8-5T-Vf8">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68x-7w-vFM">
+                                        <rect key="frame" x="0.0" y="54" width="374" height="43"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBl-v0-hR9">
+                                        <rect key="frame" x="0.0" y="108" width="374" height="43"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRp-P2-qBl">
+                                        <rect key="frame" x="0.0" y="162" width="374" height="42.5"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="xmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QsE-m3-osc">
+                                <rect key="frame" x="20" y="66" width="32.5" height="28"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QsE-m3-osc" secondAttribute="height" multiplier="1:1" id="MRo-9f-Tje"/>
+                                </constraints>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vhu-tR-K7y">
+                                <rect key="frame" x="82.5" y="79.5" width="311.5" height="2"/>
+                                <color key="tintColor" name="ProgressBarColor"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99998348950000004" green="0.99606853719999999" blue="0.99607902770000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="KYA-jc-1z2" firstAttribute="top" secondItem="kg7-dv-qMg" secondAttribute="bottom" constant="30" id="9pa-0o-T6c"/>
+                            <constraint firstItem="vhu-tR-K7y" firstAttribute="centerY" secondItem="QsE-m3-osc" secondAttribute="centerY" id="AJT-Zt-KEg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vhu-tR-K7y" secondAttribute="trailing" constant="20" id="GbX-MC-gL1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KYA-jc-1z2" secondAttribute="trailing" constant="20" id="Gq6-cS-ze2"/>
+                            <constraint firstItem="ygR-ke-6cF" firstAttribute="top" secondItem="QsE-m3-osc" secondAttribute="bottom" constant="20" id="ITW-91-RMN"/>
+                            <constraint firstItem="QsE-m3-osc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="IsJ-bW-XXW"/>
+                            <constraint firstItem="vhu-tR-K7y" firstAttribute="leading" secondItem="QsE-m3-osc" secondAttribute="trailing" constant="30" id="Jle-sJ-7g3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ygR-ke-6cF" secondAttribute="trailing" constant="20" id="R2e-yj-0Xf"/>
+                            <constraint firstItem="KYA-jc-1z2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SAe-8s-id7"/>
+                            <constraint firstItem="N2l-xj-uBL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TNW-Nm-BMS"/>
+                            <constraint firstItem="N2l-xj-uBL" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.85" id="UQ8-2y-hFX"/>
+                            <constraint firstItem="KYA-jc-1z2" firstAttribute="height" secondItem="qRp-P2-qBl" secondAttribute="height" id="UaZ-eC-JRq"/>
+                            <constraint firstItem="kg7-dv-qMg" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.25" id="cM3-3K-UbG"/>
+                            <constraint firstItem="QsE-m3-osc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gps-3i-18j"/>
+                            <constraint firstItem="kg7-dv-qMg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mbd-w2-fm7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KYA-jc-1z2" secondAttribute="bottom" constant="40" id="mdb-V9-A4o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kg7-dv-qMg" secondAttribute="trailing" constant="20" id="sWt-FG-9Vf"/>
+                            <constraint firstItem="QsE-m3-osc" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.04" id="xeo-Ag-7Rh"/>
+                            <constraint firstItem="ygR-ke-6cF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yPg-tC-mEw"/>
+                            <constraint firstItem="N2l-xj-uBL" firstAttribute="top" secondItem="ygR-ke-6cF" secondAttribute="bottom" constant="20" id="yal-1L-6UL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="brazil-flag" width="500" height="350"/>
+        <image name="xmark" catalog="system" width="64" height="56"/>
+        <namedColor name="CorrectButtonColor">
+            <color red="0.54400002956390381" green="0.77700001001358032" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="FontColor">
+            <color red="0.29024526480000001" green="0.2940532267" blue="0.29804000260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ProgressBarColor">
+            <color red="0.96200001239776611" green="0.78899997472763062" blue="0.26600000262260437" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
 </document>
