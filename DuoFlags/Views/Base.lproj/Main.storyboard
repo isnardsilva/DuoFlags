@@ -17,56 +17,82 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="De quem é essa bandeira?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygR-ke-6cF">
-                                <rect key="frame" x="20" y="116.5" width="374" height="27.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <rect key="frame" x="20" y="116.5" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="brazil-flag" translatesAutoresizingMaskIntoConstraints="NO" id="N2l-xj-uBL">
-                                <rect key="frame" x="31" y="164" width="352" height="246.5"/>
+                                <rect key="frame" x="43.5" y="173.5" width="327" height="229.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="N2l-xj-uBL" secondAttribute="height" multiplier="10:7" id="mXp-Rr-f6E"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYA-jc-1z2">
-                                <rect key="frame" x="20" y="779" width="374" height="43"/>
+                                <rect key="frame" x="20" y="771" width="374" height="51"/>
                                 <color key="backgroundColor" name="CorrectButtonColor"/>
-                                <state key="normal" title="Verificar"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="VERIFICAR">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="checkAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eXf-gw-PlF"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="kg7-dv-qMg">
-                                <rect key="frame" x="20" y="544.5" width="374" height="204.5"/>
+                                <rect key="frame" x="20" y="503.5" width="374" height="237.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Za8-5T-Vf8">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Za8-5T-Vf8">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="51.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" name="FontColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="markAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gjW-9h-R9R"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68x-7w-vFM">
-                                        <rect key="frame" x="0.0" y="54" width="374" height="43"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68x-7w-vFM">
+                                        <rect key="frame" x="0.0" y="62.5" width="374" height="51"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" name="FontColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="markAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Rh-DP-Bju"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBl-v0-hR9">
-                                        <rect key="frame" x="0.0" y="108" width="374" height="43"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBl-v0-hR9">
+                                        <rect key="frame" x="0.0" y="124.5" width="374" height="51"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" name="FontColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="AnswerBorderButtonColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="markAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UUs-d7-1K5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRp-P2-qBl">
-                                        <rect key="frame" x="0.0" y="162" width="374" height="42.5"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="0.0" y="186.5" width="374" height="51"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" name="FontColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="markAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PpI-qz-4Sb"/>
                                         </connections>
@@ -97,16 +123,16 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ygR-ke-6cF" secondAttribute="trailing" constant="20" id="R2e-yj-0Xf"/>
                             <constraint firstItem="KYA-jc-1z2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SAe-8s-id7"/>
                             <constraint firstItem="N2l-xj-uBL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TNW-Nm-BMS"/>
-                            <constraint firstItem="N2l-xj-uBL" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.85" id="UQ8-2y-hFX"/>
                             <constraint firstItem="KYA-jc-1z2" firstAttribute="height" secondItem="qRp-P2-qBl" secondAttribute="height" id="UaZ-eC-JRq"/>
-                            <constraint firstItem="kg7-dv-qMg" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.25" id="cM3-3K-UbG"/>
                             <constraint firstItem="QsE-m3-osc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gps-3i-18j"/>
                             <constraint firstItem="kg7-dv-qMg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mbd-w2-fm7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KYA-jc-1z2" secondAttribute="bottom" constant="40" id="mdb-V9-A4o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kg7-dv-qMg" secondAttribute="trailing" constant="20" id="sWt-FG-9Vf"/>
+                            <constraint firstItem="N2l-xj-uBL" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.28" id="wuV-9j-TMN"/>
                             <constraint firstItem="QsE-m3-osc" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.04" id="xeo-Ag-7Rh"/>
+                            <constraint firstItem="kg7-dv-qMg" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.29" id="xqP-MZ-GJW"/>
                             <constraint firstItem="ygR-ke-6cF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yPg-tC-mEw"/>
-                            <constraint firstItem="N2l-xj-uBL" firstAttribute="top" secondItem="ygR-ke-6cF" secondAttribute="bottom" constant="20" id="yal-1L-6UL"/>
+                            <constraint firstItem="N2l-xj-uBL" firstAttribute="top" secondItem="ygR-ke-6cF" secondAttribute="bottom" constant="33" id="yal-1L-6UL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
@@ -127,6 +153,9 @@
     <resources>
         <image name="brazil-flag" width="500" height="350"/>
         <image name="xmark" catalog="system" width="64" height="56"/>
+        <namedColor name="AnswerBorderButtonColor">
+            <color red="0.89399999380111694" green="0.89399999380111694" blue="0.89399999380111694" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="CorrectButtonColor">
             <color red="0.54400002956390381" green="0.77700001001358032" blue="0.23100000619888306" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

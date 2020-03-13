@@ -16,4 +16,18 @@ public class QuestionView: UIView {
     @IBOutlet public var answerDButton: UIButton!
     @IBOutlet public var checkAnswerButton: UIButton!
     
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        print("init")
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        print("required init")
+    }
+    
+//    public override func layoutSubviews() {
+//        print("layoutSubviews")
+//        answerAButton.backgroundColor = .red
+//    }
 }
