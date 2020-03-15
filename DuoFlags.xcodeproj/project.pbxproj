@@ -17,6 +17,7 @@
 		049BB234241164B5008B5D1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049BB232241164B5008B5D1D /* Main.storyboard */; };
 		049BB236241164B7008B5D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049BB235241164B7008B5D1D /* Assets.xcassets */; };
 		049BB239241164B7008B5D1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049BB237241164B7008B5D1D /* LaunchScreen.storyboard */; };
+		04FD9735241EA60400EDA844 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD9734241EA60400EDA844 /* AnswerButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		049BB235241164B7008B5D1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		049BB238241164B7008B5D1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		049BB23A241164B7008B5D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04FD9734241EA60400EDA844 /* AnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				049BB232241164B5008B5D1D /* Main.storyboard */,
 				049BB237241164B7008B5D1D /* LaunchScreen.storyboard */,
 				04231B9C24134A2500DDDEF8 /* QuestionView.swift */,
+				04FD9734241EA60400EDA844 /* AnswerButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04231B9F24134B9700DDDEF8 /* Question.swift in Sources */,
+				04FD9735241EA60400EDA844 /* AnswerButton.swift in Sources */,
 				04231B9D24134A2500DDDEF8 /* QuestionView.swift in Sources */,
 				049BB231241164B5008B5D1D /* QuestionViewController.swift in Sources */,
 				04231BA124134BDC00DDDEF8 /* QuestionGroup.swift in Sources */,

@@ -2,230 +2,176 @@
 //  AnswerButton.swift
 //  DuoFlags
 //
-//  Created by Isnard Silva on 09/03/20.
+//  Created by Isnard Silva on 15/03/20.
 //  Copyright © 2020 Isnard Silva. All rights reserved.
 //
 
 import UIKit
 
 @IBDesignable
-public final class CustomButton: UIButton {
-    @IBInspectable var selectedBackgroundColor: UIColor?
-    @IBInspectable var selectedBorderColor: UIColor?
+public final class AnswerButton: UIButton {
+    
+    // MARK: - Properties
+    
+    // Propriedades que permitem que o usuario edite seu botao
+    // tanto pelo Interface Builder quanto via Codigo
+
+    // Texto presente em cada estado do botao
+//    @IBInspectable public var selectedText: String = "Selected"
+//    @IBInspectable public var deselectedText: String = "Deselected"
+//    @IBInspectable public var disabledText: String = "Disable"
+    
+    // Cor do texto em cada state do Botao
+    @IBInspectable public var textColorSelected: UIColor = .gray
+    @IBInspectable public var textColorDeselected: UIColor = .lightGray
+    @IBInspectable public var textColorDisabled: UIColor = .lightGray
+    
+    // Cores das bordas em cada state do Botao
+    @IBInspectable public var borderColorSelected: UIColor = .purple
+    @IBInspectable public var borderColorDeselected: UIColor = .purple
+    @IBInspectable public var borderColorDisabled: UIColor = .gray
+    
+    // Tamanho e arredondamento das bordas
+    @IBInspectable public var borderWidth: CGFloat = 3.0
+    @IBInspectable public var cornerRadius: CGFloat = 10.0
     
     
-    
-//    public let borderBottomPlus = CALayer()
-    
-    
-//    public override var isSelected: Bool {
+    // Controla a state de quando o botao esta selecionado
+    public override var isSelected: Bool {
 //        didSet {
-//            self.backgroundColor = isSelected ? UIColor.red : UIColor.clear
+//            print("isSelected = \(oldValue)")
+//            if oldValue == true {
+//                setDeselected()
+//            } else {
+//                setSelected()
+//            }
 //        }
-//    }
+        
+        willSet {
+            print("isSelected = \(newValue)")
+            if newValue == true {
+                setSelected()
+            } else {
+                setDeselected()
+            }
+        }
+    }
     
-//    public override var isTouchInside: Bool {
+    // Controla o estado de quando o usuario toca e tira o
+    // dedo do botao
+    public override var isHighlighted: Bool {
+        didSet {
+            // Impedindo que ao clicar o fundo do botao fique azul
+            self.tintColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+        }
+    }
+    
+    // Controla o estado do botao quando ele estiver desabilitado
+    public override var isEnabled: Bool {
 //        didSet {
-//                   self.backgroundColor = isTouchInside ? UIColor.red : UIColor.clear
-//               }
-//    }
-    
-    
-//    var borderWidth: CGFloat = 2.0
-//    var borderColor = UIColor.white.cgColor
-
-//    @IBInspectable var titleText: String? {
-//        didSet {
-//            self.setTitle(titleText, for: .normal)
-//            self.setTitleColor(UIColor.black,for: .normal)
+//            if oldValue == true {
+//                setDisabled()
+//            }
 //        }
-//    }
-
-//    override init(frame: CGRect){
-//        super.init(frame: frame)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        super.init(coder: coder)
-////        fatalError("init(coder:) has not been implemented")
-//    }
-
-    public override func layoutSubviews() {
-        super.layoutSubviews()
         
-//        self.setBackgroundColor(color: .blue, forState: .selected)
-//        self.setBackgroundColor(color: .blue, forState: .highlighted)
-        
-        setup()
-//        self.addBottomBorderWithColor(color: .red, width: 20)
-        
-        self.setTitleColor(.orange, for: .highlighted)
+        willSet {
+            if newValue == true {
+                setDisabled()
+            }
+        }
     }
     
     
+    // MARK: - Private properties
     
-//
+    // Criando uma borda customizada para o botao
+//    private let border = CAShapeLayer()
+    
+    
+    // MARK: - Drawing
+    // Realiza o desenho do conteudo da View - Botao
+    public override func draw(_ rect: CGRect) {
+        super.draw(rect)
 
-    
-    private func setup() {
         
-//        self.setBackgroundColor(color: .blue, forState: .highlighted)
+        // Configurando a borda
+//        border.lineWidth = borderWidth
+//        border.frame = self.bounds
+//        border.fillColor = nil
+//        border.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius).cgPath
+//        self.layer.addSublayer(border)
+        self.layer.borderWidth = borderWidth
         
-        
-        ////        self.clipsToBounds = true
-////        self.layer.cornerRadius = 10
-//
-//        self.backgroundColor = .clear
-//
-////        self.addBottomBorderWithColor(color: UIColor(cgColor: self.layer.borderColor!), width: 5)
-//
-////        self.addRightBorderWithColor(color: UIColor(cgColor: self.layer.borderColor!), width: 1)
-//
-//
-////        0, btn.frame.size.height - 1.0f, btn.frame.size.width, 1
-//
-////        let borderBottom = UIView(frame: CGRect(x: 0, y: frame.size.height, width: <#T##CGFloat#>, height: <#T##CGFloat#>))
-//
-//
-////        self.layer.borderWidth = 5
-////        self.layer.borderColor = UIColor(named: "AnswerBorderButtonColor")?.cgColor
-//
-////        self.layer.borderColor = borderColor
-////        self.layer.borderWidth = borderWidth
-//
-//
-//        let borderBottom = UIView(frame: CGRect(x:0, y:self.frame.size.height - 5, width:self.frame.size.width, height:5))
-//
-//        borderBottom.backgroundColor = .red
-//
-//        self.addSubview(borderBottom)
-        
-        
-//        let borderBottom =
-        
-        
-//        let borderBottomPlus = CALayer()
-//        borderBottomPlus.backgroundColor = UIColor.red.cgColor
-//        borderBottomPlus.frame = CGRect(x: self.cornerRadius, y: self.frame.size.height - self.layer.borderWidth, width: self.frame.size.width - (self.cornerRadius * 2), height: self.layer.borderWidth * 2)
-        
-//        borderBottomPlus.frame = CGRect(x: 0, y: self.frame.size.height - self.layer.borderWidth, width: self.frame.size.width - (self.cornerRadius * 2), height: self.layer.borderWidth * 2)
-//
-//
-//        self.layer.masksToBounds = true
-//
-//
-//
-//        self.layer.addSublayer(borderBottomPlus)
-//
-//        self.layer.cornerRadius = 10
-        
-//        CGRectMake(-borderWidth, -borderWidth, self.frame.size.width+borderWidth, self.frame.size.height+borderWidth)
-        
-//        let borderBottomPlus = CALayer()
-//        borderBottomPlus.backgroundColor = self.borderColor?.cgColor
-//        borderBottomPlus.frame = CGRect(x: 0.0, y: self.frame.maxY - self.layer.borderWidth * 4, width: self.frame.size.width, height: self.layer.borderWidth * 4)
-//
-//        self.layer.addSublayer(borderBottomPlus)
-//        self.layer.masksToBounds = true
-        
-        
-//        self.backgroundColor = .red
-        
-//        let borderBottomPlus = CALayer()
-//        borderBottomPlus.backgroundColor = self.borderColor?.cgColor
-//        borderBottomPlus.frame = CGRect(x: 0.0, y: self.frame.maxY - self.layer.borderWidth * 4, width: self.frame.size.width, height: self.layer.borderWidth * 4)
-//self.layer.masksToBounds = true
-//                self.layer.addSublayer(borderBottomPlus)
-//
-        
-        
-        
-        let borderBottomPlus = CALayer()
-        borderBottomPlus.backgroundColor = self.borderColor?.cgColor
-        borderBottomPlus.frame = CGRect(x: 0, y: self.frame.size.height - self.borderWidth * 2, width:self.frame.size.width, height: self.borderWidth * 2)
-        self.layer.addSublayer(borderBottomPlus)
-        
-        
+        // Configurando o arredondamento das bordas
+        self.layer.cornerRadius = cornerRadius
         self.layer.masksToBounds = true
+        
+        
+        // Desabilitando isHighlighted para que o fundo do
+        // botao nao fique azul quando estiver no estado de Selected
+        self.isHighlighted = false
+        
+        // Configurando o botao dependendo de qual estado ele esta
+        // Verificando se esta ativo
+        if isEnabled {
+            // Verificando se esta selecionado
+            if isSelected {
+                setSelected()
+            } else {
+                setDeselected()
+            }
+        } else {
+            setDisabled()
+        }
+        
+        
+        // Add uma resposta ao toque do usuario no botao
+        addTarget(self, action: #selector(onPress), for: .touchUpInside)
+    }
+    
+    // Configurando o botao para quando ele estiver selecionado
+    private func setSelected() {
+        // Mudando o estilo da borda
+//        border.lineDashPattern = nil
+//        border.strokeColor = borderColorSelected.cgColor
+        self.layer.borderColor = borderColorSelected.cgColor
+        
+        // Mudando o estilo do texto
+//        self.tintColor = .clear
+//        self.setTitle(selectedText, for: .selected)
+        self.setTitleColor(textColorSelected, for: .selected)
+    }
+    
+    // Configurando o botao para quando ele nao estiver selecionado
+    private func setDeselected() {
+        // Mudando o estilo da borda
+//        border.lineDashPattern = [4, 4]
+//        border.strokeColor = borderColorDeselected.cgColor
+        self.layer.borderColor = borderColorDeselected.cgColor
+        
+        // Mudando o estilo do texto
+//        self.setTitle(deselectedText, for: .normal)
+        self.setTitleColor(textColorDeselected, for: .normal)
+    }
+    
+    private func setDisabled() {
+        // Mudando o estilo da borda
+//        border.lineDashPattern = nil
+//        border.strokeColor = borderColorDisabled.cgColor
+        self.layer.borderColor = borderColorDisabled.cgColor
+
+        
+        // Mudando o estilo do texto
+//        self.setTitle(disabledText, for: .disabled)
+        self.setTitleColor(textColorDisabled, for: .disabled)
+    }
+    
+    
+    // MARK: - Actions
+    @objc private func onPress() {
+        print("Button pressed")
+        
+        // Mundando o state atual do botao
+        isSelected = !isSelected
     }
 }
-
-@IBDesignable extension CustomButton {
-
-    @IBInspectable var borderWidth: CGFloat {
-        set {
-            layer.borderWidth = newValue
-        }
-        get {
-            return layer.borderWidth
-        }
-    }
-
-    @IBInspectable var cornerRadius: CGFloat {
-        set {
-            layer.cornerRadius = newValue
-        }
-        get {
-            return layer.cornerRadius
-        }
-    }
-
-    @IBInspectable var borderColor: UIColor? {
-        set {
-            guard let uiColor = newValue else { return }
-            layer.borderColor = uiColor.cgColor
-        }
-        get {
-            guard let color = layer.borderColor else { return nil }
-            return UIColor(cgColor: color)
-        }
-    }
-}
-
-
-//extension AnswerButton {
-//    func setBackgroundColor(color: UIColor, forState: UIControl.State) {
-//        self.clipsToBounds = true  // add this to maintain corner radius
-//        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
-//        if let context = UIGraphicsGetCurrentContext() {
-//            context.setFillColor(color.cgColor)
-//            context.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
-//            let colorImage = UIGraphicsGetImageFromCurrentImageContext()
-//            UIGraphicsEndImageContext()
-//            self.setBackgroundImage(colorImage, for: forState)
-//        }
-//    }
-//}
-
-
-//extension AnswerButton {
-//func addTopBorderWithColor(color: UIColor, width: CGFloat) {
-//    let border = CALayer()
-//    border.backgroundColor = color.cgColor
-//    border.frame = CGRect(x:0,y: 0, width:self.frame.size.width, height:width)
-//
-//    border.cornerRadius = 10
-//    self.layer.addSublayer(border)
-//}
-//
-//func addRightBorderWithColor(color: UIColor, width: CGFloat) {
-//    let border = CALayer()
-//    border.backgroundColor = color.cgColor
-//    border.frame = CGRect(x: self.frame.size.width - width,y: 0, width:width, height:self.frame.size.height)
-//    self.layer.addSublayer(border)
-//}
-//
-//func addBottomBorderWithColor(color: UIColor, width: CGFloat) {
-//    let border = CALayer()
-//    border.backgroundColor = color.cgColor
-//    border.frame = CGRect(x:0, y:self.frame.size.height - width, width:self.frame.size.width, height:width)
-//    self.layer.addSublayer(border)
-//}
-//
-//func addLeftBorderWithColor(color: UIColor, width: CGFloat) {
-//    let border = CALayer()
-//    border.backgroundColor = color.cgColor
-//    border.frame = CGRect(x:0, y:0, width:width, height:self.frame.size.height)
-//    self.layer.addSublayer(border)
-//}
-//}

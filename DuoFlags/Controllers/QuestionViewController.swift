@@ -20,7 +20,7 @@ public class QuestionViewController: UIViewController {
     public var incorrectCount = 0
     
     // Resposta marcada pelo usuario
-    public var markedAnswer: String!
+    public var markedAnswer: AnswerButton?
     
     // Camada de View fornecendo os elementos presenta na tela
     public var questionView: QuestionView! {
@@ -41,6 +41,10 @@ public class QuestionViewController: UIViewController {
     }
 
     private func showQuestion() {
+        // Deselecionado qualquer alternativa que o usuario tenha
+        // selecionado anteriormente
+//        questionView.clearSelectionAllAnswers()
+        
         // Obtendo a questao que sera exibida
         let question = questionGroup.questions[questionIndex]
         
@@ -56,20 +60,33 @@ public class QuestionViewController: UIViewController {
     
     // MARK: - Actions
     // Marcando a resposta a ser verificada
-    @IBAction func markAnswer(_ sender: UIButton) {
-        markedAnswer = sender.titleLabel!.text
-        print("Resposta marcada: \(markedAnswer!)")
+    @IBAction func markAnswer(_ sender: AnswerButton) {
+        // Verificando se o usuario ja marcou uma resposta alguma vez
+        guard let _ = markedAnswer else {
+            markedAnswer = sender
+            return
+        }
+        
+        markedAnswer!.isSelected = false
+        markedAnswer = sender
+        print("Resposta marcada: \(markedAnswer!.titleLabel!.text!)")
     }
     
     // Verificando se a resposta correta foi a que foi marcada
     @IBAction func checkAnswer(_ sender: UIButton) {
+        print("Verificar resposta!")
+        
+        // Impedindo que o usuario mude a alternativa escolhida
+//        questionView.enableAnswerButtons(enable: false)
+        
+        
         // Obtendo os dados da questao sendo exibida atualmente
         let currectQuestion = questionGroup.questions[questionIndex]
         // Obtendo a resposta correta para essa questao
         let correctAnswer = currectQuestion.answers[currectQuestion.correctAnswer]
-        
+
         // Verificando se a resposta marcada e a resposta correta
-        if markedAnswer == correctAnswer {
+        if markedAnswer!.titleLabel!.text! == correctAnswer {
             // Incrementando o nro de respostas corretas
             correctCount += 1
             print("Acertou")
@@ -78,7 +95,7 @@ public class QuestionViewController: UIViewController {
             incorrectCount += 1
             print("Errou")
         }
-        
+
         // Chamando a proxima pergunta
         showNextQuestion()
     }
@@ -93,6 +110,10 @@ public class QuestionViewController: UIViewController {
             // TODO: - Implementar logica quando acaba as questoes
             return
         }
+        
+        // Limpando a alternativa que foi selecionada
+        markedAnswer!.isSelected = false
+        markedAnswer = nil
         
         // Exibindo a proxima questao
         showQuestion()
